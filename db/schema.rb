@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20161012023742) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
   end
- |add_index "expenses", ["category_id"], name: "index_expenses_on_category_id"
   add_index "expenses", ["category_id"], name: "index_expenses_on_category_id"
+  add_index "expenses", ["user_id"], name: "index_expenses_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
