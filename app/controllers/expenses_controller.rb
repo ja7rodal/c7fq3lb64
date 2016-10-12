@@ -1,4 +1,7 @@
 class ExpensesController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
      @expenses = Expense.order("date DESC")
      unless params[:category_id].blank? && params[:concept].blank?
